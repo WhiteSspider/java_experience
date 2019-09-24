@@ -1,0 +1,174 @@
+                                                                             wire [7:0]char_count;
+                                                                             wire [11:0]line_count;
+                                                                             wire hsync;
+                                                                             wire vsync;
+                                                                             wire visible;
+                                                                             hvsync hvsync_inst(
+                                                                         reg reset, clk;
+                                                                                 reset,
+                                                                                 clk,
+                                                                                 char_count[7:0],
+                                                                                 line_count[11:0],
+                                                                                 hsync,
+                                                                                 vsync,
+                                                                                 visible
+                                                                                 );
+                                                                             reg [3:0]key;
+                                                                             wire video,video_r,video_g,video_b;
+                                                                             wire [7:0]goals;
+                                                                             game game_inst(
+                                                                                 reset,
+                                                                                 clk,
+                                                                                 vsync,
+                                                                                 key,
+                                                                                 char_count,
+                                                                                 line_count,
+                                                                                 visible,
+                                                                                 video,
+                                                                                 video_r,
+                                                                                 video_g,
+                                                                                 video_b,
+                                                                                 goals
+                                                                                 );
+                                                                             initial
+                                                                                 clk = 0;
+                                                                             always
+                                                                                 #100 clk = ~clk;
+                                                                             initial
+                                                                             begin
+                                                                                 reset = 1'b1;
+                                                                                 key = 4'b0000;
+                                                                                 nframe = 0;
+                                                                                 #10;
+                                                                             reset = 1'b0;
+                                                                                 key = 4'b0111;
+                                                                             end
+                                                                             reg [1:0]nframe;
+                                                                             always @(posedge clk)
+                                                                             begin
+                                                                            if(line_count<600 && line_count[3:0]==0 && nfram
+                                                                               begin
+                                                                                 char_count<100
+                                                                                    $write("*");    "*"
+                                                                                 else
+                                                                                    $write("#");  "#"
+                                                                                  else
+                                                                                    $write(" ");
+                                                                                    end
+                                                                                   else
+                                                                                   begin
+                                                                                   $display("|");
+                                                                                   end
+                                                                                              begin
+                                                                                              $display("|");
+                                                                                              end
+                                                                                      begin
+                                                                                              if(line_count[3:0]==0)
+                                                                                                begin
+                                                                                                     $display("");
+                                                                                                     nframe = nframe + 1;
+                                                                                                                begin
+                                                                                                                  $display("");
+                                                                                                                  nframe = nframe + 1;
+                                                                                                     $display("");
+                                                                                                     nframe = nframe + 1;
+                                                                                                                begin
+                                                                                                                  $display("");
+                                                                                                                  nframe = nframe + 1;
+                                                                                              else begin
+                                                                                                #400000000 $finish;
+                                                                                                #400000000 $finish;
+                                                                                              end else
+                                                                                        $display("");
+                                                                                        nframe = nframe + 1;
+                                                                                                        begin
+                                                                                                        $display("|");
+                                                                                                        end
+                                                                                      begin
+                                                                                        $display("");
+                                                                                        nframe = nframe + 1;
+                                                                                                   begin
+                                                                                                     $display("");
+                                                                                                     nframe = nframe + 1;
+                                                                            else
+                                                                              begin
+                                                                                #400000000 $finish;
+                                                                                #400000000 $finish;
+                                                                                #400000000 $finish;
+                                                                                #400000000 $finish;
+                                                                            end else
+                                                                             initial
+                                                                         endmodule                   module test;
+                                                                             begin
+                                                                                 #400000000 $finish;
+                                                                             end
+                                                                             /*
+                                                                             initial
+                                                                             begin
+                                                                                 $dumpfile("out.vcd");
+                                                                                 $dumpvars(0,test);
+
+                                                                                            if(line_count[3:0]==0)
+                                                                                              begin
+                                                                                              $display("|");
+                                                                                              end
+                                                                                              begin
+                                                                                                     $display("");
+                                                                                                     nframe = nframe + 1;
+                                                                                                                begin
+                                                                                                                  $display("");
+                                                                                                                  nframe = nframe + 1;
+                                                                                                     $display("");
+                                                                                                     nframe = nframe + 1;
+                                                                                                                begin
+                                                                                                                  $display("");
+                                                                                                                  nframe = nframe + 1;
+                                                                                                begin
+                                                                                                     $display("");
+                                                                                                     nframe = nframe + 1;
+                                                                                                                begin
+                                                                                                                  $display("");
+                                                                                                                  nframe = nframe + 1;
+                                                                                                     $display("");
+                                                                                                     nframe = nframe + 1;
+                                                                                                                begin
+                                                                                                                  $display("");
+                                                                                                                  nframe = nframe + 1;
+                                                                                                     $display("");
+                                                                                                     nframe = nframe + 1;
+
+                                                                                                        begin
+                                                                                                             $display("");
+                                                                                                             nframe = nframe + 1;
+                                                                                                                        begin
+                                                                                                                          $display("");
+                                                                                                                          nframe = nframe + 1;
+                                                                                                             if(line==0)
+                                                                                                               begin
+                                                                                                               $display("");
+                                                                                                               $display("");
+                                                                                                             else
+                                                                                                               begin
+                                                                                                               $display("");
+                                                                                                             end
+
+                                                                                                             $display("");
+                                                                                                             nframe = nframe + 1;
+                                                                                                                        begin
+                                                                                                                          $display("");
+                                                                                                                          nframe = nframe + 1;
+
+                                                                                                                begin
+                                                                                                                  $display("");
+                                                                                                                  nframe = nframe + 1;
+
+                                                                                            else begin
+                                                                                                #400000000 $finish;
+                                                                                                #400000000 $finish;
+                                                                                                #400000000 $finish;
+                                                                                                #400000000 $finish;
+                                                                                              end
+                                                                                            end else
+
+                                                                             end
+                                                                             */
